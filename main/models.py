@@ -7,6 +7,7 @@ from ckeditor.fields import RichTextField
 
 class Doctors(models.Model):
     title = models.CharField(max_length=200)
+    desc = RichTextField(blank=True)
     phone_number = models.CharField(max_length=200, blank=True)
     status = models.IntegerField(default=0)
 

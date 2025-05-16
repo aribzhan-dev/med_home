@@ -11,3 +11,13 @@ def indexHandler(request):
         'services': services
     }
                   )
+
+def index2Handler(request):
+    doctors = Doctors.objects.filter(status=0)
+    services = Services.objects.filter(status=0)
+
+    return render(request, 'index_2.html', {
+        'doctors': doctors,
+        'services': services
+    }
+                  )

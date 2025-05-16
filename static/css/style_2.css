@@ -147,25 +147,18 @@ nav{
 }
 
 .nav_bar_texts{
-    display: flex;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .abouts{
-    display: flex;
-    align-items: center;
     gap: 10px;
     max-width: 400px;
     margin-top: 100px;
 }
 
-.abouts svg{
-    max-width: 150px;
-    padding: 10px 0;
-    color: #5c92ff;
-    border-right: 1px solid rgb(217, 217, 217);
-}
 
 .doctor_catygory p{
     color: #5F666D;
