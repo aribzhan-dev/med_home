@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>ClubMed</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="menu_header">
+            <div class="menu_header_text">
+                <div class="secound_menu_display">
+                    <img src="static/image/clubmed-grey_orig.png" alt="">
+                    <div class="header_text">
+                        <a href="#first_nav">Врач на дом</a>
+                        <a href="#secound_nav">Наши услуги</a>
+                        <a href="#therd_nav">О компании</a>
+                        <a href="no-page">Отзывы</a>
+                        <a href="no-page">Сертификаты</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu_phone_number">
+                <div class="display_menu">
+                    <div class="phone_numver">
+                        <i class='bx bxs-phone'></i>
+                        <a href="tel:">+7 (776) 615 56 16</a>
+                    </div>
+                    <div class="call_phone_for_WatsApp">
+                        <a href="whatsapp:"><i class='bx bxl-whatsapp'></i></a>
+                        <a href="tel:"><i class='bx bx-phone-call'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="display_nona_menu">
+        <input type="checkbox" id="menu-toggle">
+        <label class="menu-btn" for="menu-toggle">☰</label>
+
+        <div class="sidebar">
+            <a href="#first_nav">Врач на дом</a>
+            <a href="#secound_nav">Наши услуги</a>
+            <a href="#therd_nav">О компании</a>
+            <a href="no-page">Отзывы</a>
+            <a href="no-page">Сертификаты</a>
+        </div>
+        <label class="overlay" for="menu-toggle"></label>
+    </div>
+
+
+    <main>
+        <div class="main_img">
+            <div class="overlay_2"></div>
+            <div class="content">
+                <img src="static/image/clubmed-grey_orig.png" alt="">
+                <h1>Квалифицированная Медицинская помощь на дом 24/7</h1>
+                <p>Прибытие в течение 20 минут</p>
+                <a href="tel:">Вызвать врача на дом</a>
+            </div>
+        </div>
+    </main>
+
+    <div class="advantages">
+        <div class="advantage-item"><i class='bx bxs-user-detail'></i>
+            <p>Специалисты с многолетним опытом</p>
+        </div>
+        <div class="advantage-item"><i class='bx bx-time-five'></i>
+            <p>Работаем 24/7 без выходных</p>
+        </div>
+        <div class="advantage-item"><i class='bx bx-map'></i>
+            <p>Приедем в любой район</p>
+        </div>
+        <div class="advantage-item"><i class='bx bxs-lock'></i>
+            <p>Сохраняем анонимность</p>
+        </div>
+    </div>
+
+    <nav id="first_nav">
+        <div class="nav_bar">
+            <div class="in_nav_bar">
+                <div class="nav_bar_h2">
+                    <h2>Выезд врачей на <b style="color: #712525;">дом</b></h2>
+                </div>
+                <div class="display_nav">
+                    {% for doc in doctors %}
+                        <div class="doctors">
+                            <h3>{{ doc.title }}</h3>
+                            <a href="https://wa.me/{{ doc.phone_number }}">Вызвать</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <nav id="secound_nav">
+        <div class="nav_bar">
+            <div class="nav_bar_h2">
+                <h2 class="uslugiy_h1"><b style="color: #712525;">Наши</b> услуги</h2>
+            </div>
+            <div class="medicen_product">
+                <div class="display_nav">
+                    {% for ser in services %}
+                        <div class="about_uslugiy">
+                            <img src="/media/{{ ser.image }}" alt="">
+                            <h3>{{ ser.title }}</h3>
+                            <p>{{ ser.desc|safe }}</p>
+                            <a href="https://wa.me/{{ ser.phone_number }}">Вызвать</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <nav id="therd_nav">
+        <div class="therd_nav_bar">
+            <div class="therd_bar">
+                <div class="therd_static/image">
+                    <img src="https://vita-med.kz/wp-content/uploads/2025/02/САНТЕХНИК-74-1.png" alt="">
+                </div>
+                <div class="therd_texts">
+                    <h1>О нашей <b style="color: #712525;">компании</b></h1>
+                    <p>ClubMed это профессиональная служба медицинской помощи на дому. Квалифицированный медперсонал
+                        предоставляют помощь по всем медицинским манипуляциям</p>
+                    <p>В наши услуги входят все необходимые направления для разных возрастов: от услуг по назначению
+                        вашего лечащего врача до услуг по очищению организма при отравлениях</p>
+                    <p>Мы заботимся о комфорте и безопасности клиентов, гарантируя качественное обслуживание на дому,
+                        доступное круглосуточно</p>
+                    <div class="therd_icons">
+                        <p><i class='bx bxs-check-square'></i>Приедем в любой район в течение 20 минут</p>
+                        <p><i class='bx bxs-check-square'></i>Мы работаем 24/7, включая праздники и выходные</p>
+                        <p><i class='bx bxs-check-square'></i>Более 500 специалистов с многолетним опытом</p>
+                        <p><i class='bx bxs-check-square'></i>Сохраняем анонимность</p>
+                    </div>
+                    <a href="">Вызвать специалиста</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <footer>
+        <div class="first_footer">
+            <div class="in_footer">
+                <h1>Для экстренного вызова <br> медперсонала</h1>
+                <div class="footer_call">
+                    <a href="" class="whatsapp">Наш Whatsapp</a>
+                    <div class="in_footer_call">
+                        <a href="">+7 (776) 615 56 16</a>
+                        <p>Экстренный вызов</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="secound_footer">
+            <div class="in_footer_2">
+                <div class="navigation">
+                    <h1>Навигация</h1>
+                    <p><i class='bx bxs-right-arrow'></i>Узкопрофильные врачи</p>
+                    <p><i class='bx bxs-right-arrow'></i>Перечень услуг</p>
+                    <p><i class='bx bxs-right-arrow'></i>О нас</p>
+                    <p><i class='bx bxs-right-arrow'></i>Сертификаты</p>
+                    <p><i class='bx bxs-right-arrow'></i>Отзывы</p>
+                </div>
+                <div class="go_home_med">
+                    <h1>Выезд врачей на дом</h1>
+                    {% for docs in doctors %}
+                        <p>
+                            <i class='bx bxs-right-arrow'></i>
+                            <a href="tel:{{ docs.phone_number|safe }}">{{ docs.title|safe }}</a>
+                        </p>
+                    {% endfor %}
+                </div>
+                <div class="contacts">
+                    <h1>Контакты</h1>
+                    <p><i class='bx bx-envelope'></i><a href="">info@club-med.kz</a></p>
+                    <p><i class='bx bxs-phone-call'></i><a href="">Позвонить: +7 (776) 615 56 16,</a></p>
+                    <p><i class='bx bxl-whatsapp'></i><a href="">Написать: +7 (776) 615 56 16</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="therd_footer">
+            <div class="in_footer">
+                <p>© 2025 ClubMed.kz Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
